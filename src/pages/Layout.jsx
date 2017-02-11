@@ -11,7 +11,7 @@ var TasksLayout = (props) => (
 
         <div className='container projects'>
           <ProjectMenu
-            projectArray = {props.projectArray}
+            globalProjectArray = {props.globalProjectArray}
           />
         </div>
 
