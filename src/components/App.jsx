@@ -30,7 +30,7 @@ class App extends React.Component {
       passwordInSignup: '',
       currentUser: '',
       project: {},
-      projectArray: [],
+      globalProjectArray: [{name:'Project Aardvark'}, {name: 'Project Butterfly'}, {name: 'Project Capybara'}],
       incorrectLogin: false,
       usernameTaken: false,
       isLoggedIn: false
@@ -236,6 +236,10 @@ class App extends React.Component {
     this.setState({activeTask: event.target.value});
   }
 
+  getProjectList() {
+
+  }
+
   onStartButtonClick(item, e) {
     console.log('ITEM onStartButtonClick', item);
     console.log('ITEM item._id', item._id);
@@ -255,7 +259,7 @@ class App extends React.Component {
       activeTask: item.task,
       currentTask: true,
       project: {name: projectName},
-      projectArray: this.state.projectArray.push({name:projectName}),
+      globalProjectArray: this.state.globalProjectArray.push({name:projectName}),
       start_time: Date.now(),
       total_time: item.total_time,
       started: true,  //so we can prevent another task from being created
@@ -397,7 +401,7 @@ class App extends React.Component {
           secondsElapsed:     this.state.secondsElapsed,
           lastIncrement:      this.state.lastIncrement,
           project:            this.state.project,
-          projectArray:       this.state.projectArray,
+          globalProjectArray: this.state.globalProjectArray,
           incorrectLogin:     this.state.incorrectLogin,
           usernameTaken:      this.state.usernameTaken,
           passwordInSignin:   this.state.passwordInSignin,
