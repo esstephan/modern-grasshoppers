@@ -3,6 +3,12 @@ import React from 'react';
 var TasksLayout = (props) => (
       <div className='container content'>
 
+        <div>
+          <UserSignout
+            signout={props.signout}
+          />
+        </div>
+
         <div className='container projects'>
           <ProjectMenu
             projectArray = {props.projectArray}
@@ -31,7 +37,5 @@ var TasksLayout = (props) => (
           />
         </div>
       </div>
-
 )
-
 export default TasksLayout;
