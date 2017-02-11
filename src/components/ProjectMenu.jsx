@@ -4,11 +4,14 @@ var ProjectMenu = (props) => { //dropdown menu of current projects with option t
   return (
       <div id='projectDropdown' className='dropdown'>
         <h3>Test Project Menu</h3>
-        {props.projectArray.map((project) =>
+        {props.globalProjectArray.map((project) =>
           <Project
           projectName={project.name}
           />
         )}
+        <Project
+        projectName = "Test Project"
+        />
       </div>
   );
 }
