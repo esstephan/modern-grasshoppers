@@ -9,11 +9,7 @@ var TasksLayout = (props) => (
           />
         </div>
 
-        <div className='container projects'>
-          <ProjectMenu
-            globalProjectArray = {props.globalProjectArray}
-          />
-        </div>
+
 
         <div className='container form'>
           <TaskEntry
