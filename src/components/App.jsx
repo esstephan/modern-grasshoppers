@@ -110,6 +110,35 @@ class App extends React.Component {
 
   }
 
+  deleteDataFromServer() {
+    var that = this;
+    $.ajax({
+      type: "DELETE",
+      url: '/tasks',
+      data: JSON.stringify({
+        _id: this.state._id,
+        task: this.state.activeTask,
+        start_time: this.state.start_time,
+        end_time: this.state.end_time,
+        project: this.state.project,
+        projectArray: this.state.projectArray,
+        currentTask: this.state.currentTask,
+        lastIncrement: this.state.lastIncrement,
+        total_time: this.state.total_time,
+        started: true,
+      }),
+      success: function(data) {
+        that.loadDataFromServer();
+      },
+      error: function(error) {
+        console.log('DELETE DATA OOPS! error:', error);
+      },
+      contentType: 'application/json',
+      dataType: 'json'
+    });
+
+  }
+
   postToSignin(e) {
     e.preventDefault();
     var that = this
@@ -318,6 +347,7 @@ class App extends React.Component {
       tasks: item.tasks
       //started may be useful for changing state of the START button, etc
     });
+    this.deleteDataFromServer();
   }
 
   /* BELOW FUNCTIONS RELATE TO TIMER FEATURE */

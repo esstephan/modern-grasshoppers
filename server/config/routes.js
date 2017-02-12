@@ -154,6 +154,25 @@ app.post('/tasks', checkCredentials, function(req, res) {
   );
 });
 
+app.delete('/tasks', checkCredentials, function(req, res) {
+  User.findOne({ _id: req.user._id }, //this comes from the cookie
+    //delete a specified task from the tasks array
+    function(err, user) {
+      if (!err) {
+        if (!user) {
+          console.log("User doesn't exist, please sign up.");
+        } else {
+          if (user.tasks.id(req.body._id)) {
+            var taskToDelete = user.tasks.id(req.body._id);
+            var indexToDelete = user.tasks.indexOf(taskToDelete);
+            user.tasks.splice(indexToDelete,1);
+            res.status(204).send(user.tasks);
+          }
+        }
+      }
+    });
+});
+
 //get all tasks for a user
 app.get('/tasks', checkCredentials, function(req, res) {
   User.findOne({ _id: req.user._id }) //req.user._id comes from the cookie
@@ -164,6 +183,7 @@ app.get('/tasks', checkCredentials, function(req, res) {
       console.error(err);
     });
 });
+
 
 /* FOR TESTING */
 
