@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: Tony Hyde
-  - __Scrum Master__: Erica Stephan
-  - __Development Team Members__: Ian George, Jeff Bentler
+  - __Product Owners__: Daniel Ritchie, Tony Hyde
+  - __Scrum Masters__: Gwynn Dandridge-Perry, Erica Stephan
+  - __Development Team Members__: Ian George, Jeff Bentler, Brian Hassett, Michael Chiang
 
 ## Table of Contents
 
