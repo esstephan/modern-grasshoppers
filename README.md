@@ -1,12 +1,12 @@
-# What Have I Done?!
+# Contract.ly
 
 > Keeps track of what you did all day and allows you to create an invoice based on your activity.
 
 ## Team
 
-  - __Product Owner__: Daniel Ritchie
-  - __Scrum Master__: Gwynn Dandridge-Perry
-  - __Development Team Members__: Brian Hassett, Michael Chiang
+  - __Product Owner__: Tony Hyde
+  - __Scrum Master__: Erica Stephan
+  - __Development Team Members__: Ian George, Jeff Bentler
 
 ## Table of Contents
 
